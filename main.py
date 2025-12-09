@@ -98,6 +98,7 @@ while True:
                 # Predict
                 X = np.array([row])
                 last_prediction = model.predict(X)[0]
+                #checking if the hand is on or near the face
                 for hand_coordinate in hand_lms.landmark:
                     for detection in face_results.detections:
                         bbox=detection.location_data.relative_bounding_box
