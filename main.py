@@ -18,10 +18,10 @@ volume = device.EndpointVolume
 
 
 # --- CONFIGURATION ---
-SKIP_FRAMES = 5
+SKIP_FRAMES = 2
 CAM_WIDTH, CAM_HEIGHT = 240, 240  # Lower resolution = faster, im not sure if this actually does anything
 
-# 1. Load the Trained Model
+# 1. Load the model
 try:
     with open('gesture_model.pkl', 'rb') as f:
         model = pickle.load(f)
@@ -110,7 +110,6 @@ while True:
                                     # if your hand is the the same x range as your face it probably shouldnt trigger anything
                                     if bbox.xmin< hand_coordinate.x < (bbox.xmin+bbox.width):
                                         intersects=True
-                                        print("Intersects: ")
                                         break
                                     else:
                                         intersects=False # changes intersect flag despite it being changed at the end of the loop, this is probably my fault
