@@ -50,7 +50,7 @@ while True:
 
                 label = 0
 
-            elif key == 49:  # '1' Key #this is a palm
+            elif key == 49:  # '1' Key this is a palm
 
                 label = 1
 
